@@ -1,6 +1,7 @@
 package net.Daniela.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.Daniela.tutorialmod.item.ModCreativeModTabs;
 import net.Daniela.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -31,6 +32,7 @@ public class TutorialMod {
 
         //this ensures our items will be added to the game
         ModItems.register(modEventBus);
+        ModCreativeModTabs.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

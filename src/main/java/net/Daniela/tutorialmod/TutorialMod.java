@@ -1,6 +1,7 @@
 package net.Daniela.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.Daniela.tutorialmod.block.ModBlocks;
 import net.Daniela.tutorialmod.item.ModCreativeModTabs;
 import net.Daniela.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -31,11 +32,14 @@ public class TutorialMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         //this ensures our items will be added to the game
+        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

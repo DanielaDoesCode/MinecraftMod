@@ -30,7 +30,7 @@ public class ModBlocks {
         registerBlockItem(name, toReturn);//registers the block as an item
         return toReturn; //returning the block
     }
-    //Registering an item associated with the block we pass a parameter
+    //Registering an item associated with the block we pass as parameter
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block){
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }

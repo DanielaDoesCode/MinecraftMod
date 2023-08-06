@@ -52,6 +52,7 @@ public class TutorialMod {
         //this adds the sapphire previously created in the mod items class to the ingredients tab in vanilla minecraft
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.RAW_SAPPHIRE);
         }
 
     }

@@ -20,6 +20,8 @@ public class ModItems {
     //in this situation, the item still has no name, no texture no interactions with anything, it's just a reserved slot
     public static final RegistryObject<Item> SAPPHIRE =ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SAPPHIRE =ITEMS.register("raw_sapphire",
+            () -> new Item(new Item.Properties()));
 
     //Every time we create a new item we got to register it, and that's what we do in this method
     public static void register(IEventBus eventBus){

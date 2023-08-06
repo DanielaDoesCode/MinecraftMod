@@ -1,6 +1,9 @@
 package net.Daniela.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.Daniela.tutorialmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,6 +29,9 @@ public class TutorialMod {
     public TutorialMod(){
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        //this ensures our items will be added to the game
+        ModItems.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -43,6 +49,10 @@ public class TutorialMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event){
+        //this adds the sapphire previously created in the mod items class to the ingredients tab in vanilla minecraft
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.SAPPHIRE);
+        }
 
     }
 
